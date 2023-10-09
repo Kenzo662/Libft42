@@ -6,7 +6,7 @@
 /*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:41:38 by klopez            #+#    #+#             */
-/*   Updated: 2023/10/03 10:12:52 by klopez           ###   ########.fr       */
+/*   Updated: 2023/10/09 13:43:18 by klopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t i;
-	const char *str = s;
+	const char	*str;
+	size_t		i;
 
 	i = 0;
+	str = s;
 	while (i < n)
 	{
 		if (str[i] == (char)c)

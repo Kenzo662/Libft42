@@ -6,7 +6,7 @@
 /*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:44:41 by klopez            #+#    #+#             */
-/*   Updated: 2023/10/02 14:52:18 by klopez           ###   ########.fr       */
+/*   Updated: 2023/10/09 15:48:37 by klopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
 	while (src[j] != '\0')

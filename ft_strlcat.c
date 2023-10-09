@@ -6,7 +6,7 @@
 /*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:43:55 by klopez            #+#    #+#             */
-/*   Updated: 2023/10/02 14:48:13 by klopez           ###   ########.fr       */
+/*   Updated: 2023/10/09 15:47:38 by klopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t srclen;
-	size_t j;
-	size_t i;
+	size_t	srclen;
+	size_t	j;
+	size_t	i;
 
 	srclen = ft_strlen(src);
 	i = 0;

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/09 12:37:20 by klopez            #+#    #+#             */
+/*   Updated: 2023/10/09 15:08:39 by klopez           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char *ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(src[i] != '\0')
+	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
@@ -33,27 +45,11 @@ static int	ft_countnb(int c)
 	return (count);
 }
 
-char *ft_itoa(int n)
+static char	*ft_calcul(int n, int j, char *str, int y)
 {
-	char *str;
-	int j;
-	int	y;
-	int len;
+	int	len;
 
-	y = 0;
 	len = 1;
-	j = ft_countnb(n);
-	if (n == -2147483648)
-    {
-		str = malloc(sizeof(char) * 12);
-		if (!str)
-			return (NULL);
-        ft_strcpy(str , "-2147483648");
-        return (str);
-    }
-	str = (char *)malloc(sizeof(char) * (j + 1));
-	if (!str)
-			return (NULL);	
 	if (n < 0)
 	{
 		str[0] = '-';
@@ -76,4 +72,26 @@ char *ft_itoa(int n)
 	str[y++] = (n / len) + '0';
 	str[y] = '\0';
 	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		j;
+	int		y;
+
+	y = 0;
+	j = ft_countnb(n);
+	if (n == -2147483648)
+	{
+		str = malloc(sizeof(char) * 12);
+		if (!str)
+			return (NULL);
+		ft_strcpy(str, "-2147483648");
+		return (str);
+	}
+	str = (char *)malloc(sizeof(char) * (j + 1));
+	if (!str)
+		return (NULL);
+	return (ft_calcul(n, j, str, y));
 }

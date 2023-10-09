@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 			i++;
 		}
 		if (to_find[j] == 0)
-				return ((char *)&str[i - j]);
+			return ((char *)&str[i - j]);
 		i = i - j + 1;
 	}
 	return (NULL);

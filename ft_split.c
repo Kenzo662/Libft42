@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/09 12:38:15 by klopez            #+#    #+#             */
+/*   Updated: 2023/10/09 17:58:57 by klopez           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-
-void ft_strncpy(char *s1, const char *s2, int n)
+static void	ft_strncpy(char *s1, const char *s2, int n)
 {
 	int	i;
 
@@ -13,14 +24,15 @@ void ft_strncpy(char *s1, const char *s2, int n)
 	}
 	s1[i] = '\0';
 }
-int ft_countword(const char *s, char c)
-{
-    int i;
-    int j;
 
-    i = 0;
-    j = 0;
-    while (s[i])
+static int	ft_countword(const char *s, char c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
 		while (s[i] == c)
 		{
@@ -37,34 +49,42 @@ int ft_countword(const char *s, char c)
 	return (j);
 }
 
-char **ft_split(const char *s1, char c)
+void	*freetab(char **tab, int cword)
 {
-    char **tab;
-	int	i;
-	int	j;
-	int cword;
+	while (cword > 0)
+	{
+		cword--;
+		free(tab[cword]);
+	}
+	free(tab);
+	return (NULL);
+}
 
-	tab = (char **)malloc(sizeof (char *) * (ft_countword(s1, c) + 1));
+char	**ft_split(const char *s1, char c)
+{
+	char	**tab;
+	int		j;
+	int		cword;
+
+	tab = (char **)malloc(sizeof(char *) * (ft_countword(s1, c) + 1));
 	if (!tab)
-		return(NULL);
-	i = 0;
+		return (NULL);
 	cword = 0;
-	while (s1[i])
+	s1--;
+	while (*(++s1))
 	{
 		j = 0;
-		while (s1[i + j] && s1[i + j] != c)
+		while (*(s1 + j) && *(s1 + j) != c)
 			j++;
 		if (j > 0)
 		{
-			tab[cword] = (char *)malloc(sizeof (char) * (j  + 1));
+			tab[cword] = (char *)malloc(sizeof(char) * (j + 1));
 			if (!tab[cword])
-				return (NULL);
-			ft_strncpy(tab[cword], &s1[i], j);
-			cword++;
-			i += j - 1;
+				return (freetab(tab, cword));
+			ft_strncpy(tab[cword++], s1, j);
+			s1 += j - 1;
 		}
-		i++;
 	}
-	tab [cword] = 0;
+	tab[cword] = 0;
 	return (tab);
 }

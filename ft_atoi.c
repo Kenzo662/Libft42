@@ -6,7 +6,7 @@
 /*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:39:29 by klopez            #+#    #+#             */
-/*   Updated: 2023/10/03 10:54:16 by klopez           ###   ########.fr       */
+/*   Updated: 2023/10/09 12:48:05 by klopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int i;
-	int sign;
-	int n;
+	int	i;
+	int	sign;
+	int	n;
 
 	i = 0;
 	n = 0;

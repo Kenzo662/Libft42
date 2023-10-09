@@ -6,7 +6,7 @@
 /*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:42:30 by klopez            #+#    #+#             */
-/*   Updated: 2023/10/04 13:16:21 by klopez           ###   ########.fr       */
+/*   Updated: 2023/10/09 13:45:49 by klopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*source;
 	size_t		i;
 
-	dst = (char *)dest;
-	source = (const char *)src;
+	dst = dest;
+	source = src;
 	i = -1;
 	if (!source && !dest)
 		return (0);
