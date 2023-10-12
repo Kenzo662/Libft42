@@ -13,8 +13,8 @@ void    ft_lstclear(t_list **lst, void (*del)(void *))
         if (temp->content != NULL)
         {
             del(temp->content);
-            free (temp);
         }
+        free (temp);
         temp = nextelem;
     }
     *lst = NULL;
