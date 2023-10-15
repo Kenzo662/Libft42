@@ -6,7 +6,7 @@
 /*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:38:15 by klopez            #+#    #+#             */
-/*   Updated: 2023/10/09 17:58:57 by klopez           ###   ########.fr       */
+/*   Updated: 2023/10/15 15:49:34 by klopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	ft_countword(const char *s, char c)
 	return (j);
 }
 
-void	*freetab(char **tab, int cword)
+static void	*freetab(char **tab, int cword)
 {
 	while (cword > 0)
 	{
