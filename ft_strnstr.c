@@ -6,11 +6,11 @@
 /*   By: klopez <klopez@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 20:42:20 by klopez            #+#    #+#             */
-/*   Updated: 2023/10/03 18:29:58 by klopez           ###   ########.fr       */
+/*   Updated: 2023/10/15 15:36:53 by klopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
